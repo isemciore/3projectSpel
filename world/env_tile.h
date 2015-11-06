@@ -6,6 +6,7 @@
 #define INC_3PROJECTSPEL_TILE_H
 #include "../unit/unit.h"
 #include "../stuff/item.h"
+#include <map>
 
 #include <memory>
 #include <vector>
@@ -15,8 +16,9 @@ namespace wumpus_game{
         int roomId;
         bool weaponWork;
         bool accessible = true;
-        std::vector<item> stuffInThisRoom;
-        std::vector<unit> charInThisRoom;
+        std::map<std::string,item*> mymap;
+        std::vector<item*> stuffInThisRoom;
+        std::vector<std::weak_ptr<unit>> charInThisRoom;
         std::vector<std::weak_ptr<env_tile>> neighbourPointer;
         bool dirFeasible[8] = {false};
         bool dirExist[8] = {false};
@@ -32,6 +34,7 @@ namespace wumpus_game{
         virtual void enter(std::shared_ptr<unit> character) = 0;
         virtual void exit(std::shared_ptr<unit> character) = 0;
         virtual void pick_up(item * obj) = 0;
+        virtual void drop_item(item* obj) = 0;
 
         friend class map;
 

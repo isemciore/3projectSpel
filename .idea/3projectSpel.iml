@@ -18,8 +18,12 @@
       <sourceFolder url="file://$MODULE_DIR$/unit/npc.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unit/player_ctrl.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unit/player_ctrl.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit/turtle.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit/turtle.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unit/unit.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unit/unit.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit/wumpus.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit/wumpus.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/endGtile.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/endGtile.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/env_tile.cpp" isTestSource="false" />

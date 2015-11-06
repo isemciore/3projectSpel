@@ -3,6 +3,7 @@
 //
 
 #include "game_Master.h"
+#include "unit/wumpus.h"
 
 //Map owns only sharedpointer to all tiles
 //game_master owns all shared pointer character
@@ -18,6 +19,12 @@ wumpus_game::game_Master::game_Master(std::string &endCondition, wumpus_game::sa
     else {
         mapSP->set_n_Tiles(25);
         mapSP->bind_SQ_map();
+
+        std::shared_ptr<unit> shP(new wumpus);
+        allUnits.push_back(shP);
+
+        //Wumpus
+        //Player
 
         //mapSP->host_Init_ITEM();
     }

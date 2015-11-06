@@ -8,7 +8,7 @@
 #include "unit.h"
 
 namespace wumpus_game {
-    class player_ctrl :unit{
+    class player_ctrl : unit{
 
     };
 }

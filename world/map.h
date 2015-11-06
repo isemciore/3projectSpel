@@ -23,6 +23,7 @@ namespace wumpus_game{
 
         void set_n_Tiles(int nTiles);
         void bind_SQ_map();//bind tiles to each other
+        void add_char(unit character, int location);
 
 
     private:

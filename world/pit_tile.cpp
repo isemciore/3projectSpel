@@ -29,3 +29,7 @@ void wumpus_game::pit_tile::pick_up(wumpus_game::item *obj) {
 wumpus_game::pit_tile::pit_tile(int n) : env_tile(n) {
     accessible = false;
 }
+
+void wumpus_game::pit_tile::drop_item(wumpus_game::item *obj) {
+
+}

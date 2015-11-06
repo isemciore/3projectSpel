@@ -11,6 +11,8 @@ namespace wumpus_game {
     class pit_tile : public env_tile{
 
     public:
+        virtual void drop_item(item *obj);
+
         pit_tile(int n);
         using env_tile::env_tile;
         virtual ~pit_tile();

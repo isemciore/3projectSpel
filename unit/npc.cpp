@@ -3,3 +3,11 @@
 //
 
 #include "npc.h"
+
+wumpus_game::npc::npc() {
+
+}
+
+wumpus_game::npc::~npc() {
+
+}

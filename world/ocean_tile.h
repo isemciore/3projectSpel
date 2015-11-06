@@ -12,6 +12,9 @@ namespace wumpus_game {
     class ocean_tile : public env_tile {
     public:
         ocean_tile(int);
+
+        virtual void drop_item(item *obj);
+
         using env_tile::env_tile;
 
         virtual ~ocean_tile();

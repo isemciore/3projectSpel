@@ -9,6 +9,9 @@ namespace wumpus_game{
     class unit {
         int uniqueID;
 
+    public:
+
+
     };
 
 

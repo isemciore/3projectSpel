@@ -8,8 +8,13 @@
 #include "unit.h"
 
 namespace wumpus_game {
-    class npc : unit{
+    class npc : public unit{
+    public:
+        npc();
+        npc(const npc& ) = delete;
+        virtual ~npc();
 
+        virtual bool performAction() = 0;
     };
 }
 

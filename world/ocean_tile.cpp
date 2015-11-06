@@ -31,3 +31,7 @@ wumpus_game::ocean_tile::ocean_tile(int i) : env_tile(i) {
     dirFeasible[4] = true;
     dirFeasible[6] = true;
 }
+
+void wumpus_game::ocean_tile::drop_item(wumpus_game::item *obj) {
+
+}
