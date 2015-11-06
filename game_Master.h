@@ -31,11 +31,14 @@ namespace wumpus_game {
 
 
 
+
         //Char input, if return false, then exit game, look if it is due to save game or load game
         //if load game report back to main and restart
 
         //Game master iniates default, or with savefile
 
+    private:
+        bool add_char_Bat(int position);
     };
 
 }
