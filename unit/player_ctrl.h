@@ -8,8 +8,13 @@
 #include "unit.h"
 
 namespace wumpus_game {
-    class player_ctrl :unit{
+    class player_ctrl : public unit{
+    public:
+        player_ctrl():unit(){};
+        ~player_ctrl();
 
+
+        bool performAction();
     };
 }
 

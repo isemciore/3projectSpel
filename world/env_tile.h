@@ -33,7 +33,7 @@ namespace wumpus_game{
         virtual void exit(std::shared_ptr<unit> character) = 0;
         virtual void pick_up(item * obj) = 0;
 
-        friend class map;
+        friend class game_map;
 
     private:
 

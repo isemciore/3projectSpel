@@ -3,17 +3,17 @@
 //
 
 #include <iostream>
-#include "map.h"
+#include "game_map.h"
 #include "ocean_tile.h"
 #include "desert_tile.h"
 #include "jungle_tile.h"
 #include "pit_tile.h"
-
-wumpus_game::map::~map() {
+#include "../unit/paladin.h"
+wumpus_game::game_map::~game_map() {
 
 }
 
-void wumpus_game::map::set_n_Tiles(int nTiles){
+void wumpus_game::game_map::set_n_Tiles(int nTiles){
     max_n_tiles = nTiles;
     nActivTiles=0;
 
@@ -37,7 +37,7 @@ void wumpus_game::map::set_n_Tiles(int nTiles){
 
 
 
-wumpus_game::env_tile* wumpus_game::map::createTile(int tileID) {
+wumpus_game::env_tile* wumpus_game::game_map::createTile(int tileID) {
     env_tile* tileAns;
     if (tileID==0){
         tileAns = new ocean_tile(nActivTiles);
@@ -51,11 +51,11 @@ wumpus_game::env_tile* wumpus_game::map::createTile(int tileID) {
     return tileAns;
 }
 
-wumpus_game::map::map(wumpus_game::saveAload saveFile) {
+wumpus_game::game_map::game_map(wumpus_game::saveAload saveFile) {
 
 }
 
-void wumpus_game::map::bind_SQ_map() {
+void wumpus_game::game_map::bind_SQ_map() {
     //SQUARE MAP 5*5, SOUTHWEST ID 0, NORTH WEST ID 4
     //assuming square widht is 5, 5 eleents for east/west, +-1 for north or south
         //Elt is a sharedpointer to a tile, each shared pointer has 8 weak pointer to neighbours located in a vector;
@@ -116,3 +116,22 @@ void wumpus_game::map::bind_SQ_map() {
 
 }
 
+void wumpus_game::game_map::defInitUnits() {
+    //Player name Meep
+    //def paladin
+    std::shared_ptr<unit> spUnit;
+    spUnit.reset(new() paladin);
+    spUnit->setName("Meep");
+    addUnitToMap(spUnit,0);
+
+
+
+}
+
+bool wumpus_game::game_map::addUnitToMap(std::shared_ptr<unit> SPunit, int locId) {
+    return false;
+}
+
+bool wumpus_game::game_map::deleteUnit(std::string name) {
+    return false;
+}

@@ -24,8 +24,8 @@
       <sourceFolder url="file://$MODULE_DIR$/world/endGtile.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/env_tile.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/env_tile.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/world/map.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/world/map.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/world/game_map.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/world/game_map.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/ocean_tile.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/ocean_tile.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/pit_tile.cpp" isTestSource="false" />

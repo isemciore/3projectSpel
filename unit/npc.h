@@ -8,8 +8,11 @@
 #include "unit.h"
 
 namespace wumpus_game {
-    class npc : unit{
-
+    class npc : public unit{
+    public:
+        npc():unit(){};
+        ~npc();
+        virtual bool performAction();
     };
 }
 

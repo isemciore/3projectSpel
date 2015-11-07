@@ -3,3 +3,7 @@
 //
 
 #include "npc.h"
+
+bool wumpus_game::npc::performAction() {
+ return false;
+}

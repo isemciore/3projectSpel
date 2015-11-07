@@ -5,11 +5,11 @@
 #ifndef INC_3PROJECTSPEL_GAME_MASTER_H
 #define INC_3PROJECTSPEL_GAME_MASTER_H
 
-#include "world/map.h"
 #include "unit/unit.h"
 #include "stuff/item.h"
 #include <memory>
 #include "saveAload.h"
+#include "world/game_map.h"
 //Have unique id for TILE, UNIT. handle output save and item and create world unit...
 // Handle creating new item / character
 // after every turn, it reads through publishing style.
@@ -17,8 +17,8 @@ namespace wumpus_game {
     class game_Master {
     private:
         const int DEFAULT_MAP_SIZE = 25;
-        std::shared_ptr<map> mapSP;                     //
-        std::vector<std::shared_ptr<unit>> allUnits;    // All items is handled via new and delete
+        std::shared_ptr<game_map> mapSP;                     //
+        std::vector<std::weak_ptr<unit>> allUnits;    // All items is handled via new and delete
         std::string& endReason;
         saveAload& saveFile;
 
