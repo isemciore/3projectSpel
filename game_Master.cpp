@@ -31,3 +31,7 @@ wumpus_game::game_Master::~game_Master() {
 
 }
 
+//Run, for each char perform action, when return false
+//check event if char and turtle in same slot
+//false battle, make batlte checks here
+//or if player, then analyze command here

@@ -9,15 +9,12 @@ wumpus_game::ocean_tile::~ocean_tile() {
 
 }
 
-int wumpus_game::ocean_tile::direction() {
-    return 5;
-}
 
-void wumpus_game::ocean_tile::enter(std::shared_ptr<unit> character) {
+bool wumpus_game::ocean_tile::enter(std::weak_ptr<unit> character) {
 
 }
 
-void wumpus_game::ocean_tile::exit(std::shared_ptr<unit> character) {
+void wumpus_game::ocean_tile::exit(std::weak_ptr<unit> character) {
 
 }
 

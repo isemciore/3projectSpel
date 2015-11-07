@@ -16,14 +16,10 @@ namespace wumpus_game {
 
         virtual ~ocean_tile();
 
-        virtual int direction() override;
 
-        virtual std::weak_ptr<env_tile> direction(int dir) override {
-            return neighbourPointer[dir];}
+        virtual bool enter(std::weak_ptr<unit> character) override;
 
-        virtual void enter(std::shared_ptr<unit> character) override;
-
-        virtual void exit(std::shared_ptr<unit> character) override;
+        virtual void exit(std::weak_ptr<unit> character) override;
 
         virtual void pick_up(item *obj) override;
 

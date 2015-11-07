@@ -14,12 +14,20 @@
       <sourceFolder url="file://$MODULE_DIR$/stuff/container.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/stuff/item.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/stuff/item.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit/mage.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit/mage.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unit/npc.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unit/npc.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit/paladin.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit/paladin.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unit/player_ctrl.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unit/player_ctrl.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit/turtle.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit/turtle.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unit/unit.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unit/unit.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit/wumpus.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit/wumpus.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/endGtile.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/endGtile.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/env_tile.cpp" isTestSource="false" />
@@ -36,6 +44,7 @@
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
+          <root url="file://$MODULE_DIR$/unit" />
           <root url="file:///usr/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
@@ -45,6 +54,7 @@
           <root url="file:///usr/local/include" />
         </CLASSES>
         <SOURCES>
+          <root url="file://$MODULE_DIR$/unit" />
           <root url="file:///usr/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
@@ -53,6 +63,22 @@
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include/sanitizer" />
           <root url="file:///usr/local/include" />
         </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/unit/wumpus.h" />
+          <root url="file://$MODULE_DIR$/unit/turtle.h" />
+          <root url="file://$MODULE_DIR$/unit/npc.h" />
+          <root url="file://$MODULE_DIR$/unit/unit.h" />
+          <root url="file://$MODULE_DIR$/unit/turtle.cpp" />
+          <root url="file://$MODULE_DIR$/unit/player_ctrl.cpp" />
+          <root url="file://$MODULE_DIR$/unit/wumpus.cpp" />
+          <root url="file://$MODULE_DIR$/unit/mage.h" />
+          <root url="file://$MODULE_DIR$/unit/mage.cpp" />
+          <root url="file://$MODULE_DIR$/unit/paladin.h" />
+          <root url="file://$MODULE_DIR$/unit/paladin.cpp" />
+          <root url="file://$MODULE_DIR$/unit/player_ctrl.h" />
+          <root url="file://$MODULE_DIR$/unit/npc.cpp" />
+          <root url="file://$MODULE_DIR$/unit/unit.cpp" />
+        </excluded>
       </library>
     </orderEntry>
   </component>

@@ -12,6 +12,7 @@ namespace wumpus_game {
     public:
         npc():unit(){};
         ~npc();
+
         virtual bool performAction();
     };
 }

@@ -18,7 +18,7 @@ namespace wumpus_game {
     private:
         const int DEFAULT_MAP_SIZE = 25;
         std::shared_ptr<game_map> mapSP;                     //
-        std::vector<std::weak_ptr<unit>> allUnits;    // All items is handled via new and delete
+        std::map<std::string,std::weak_ptr<unit>> allUnits;    // All items is handled via new and delete
         std::string& endReason;
         saveAload& saveFile;
 

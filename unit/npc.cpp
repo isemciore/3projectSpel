@@ -5,5 +5,9 @@
 #include "npc.h"
 
 bool wumpus_game::npc::performAction() {
- return false;
+    return false;
+}
+
+wumpus_game::npc::~npc() {
+
 }

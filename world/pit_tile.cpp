@@ -9,16 +9,12 @@ wumpus_game::pit_tile::~pit_tile() {
 
 }
 
-int wumpus_game::pit_tile::direction() {
- return 0;
-}
 
-
-void wumpus_game::pit_tile::enter(std::shared_ptr<unit> character) {
+bool wumpus_game::pit_tile::enter(std::weak_ptr<unit> character) {
 
 }
 
-void wumpus_game::pit_tile::exit(std::shared_ptr<unit> character) {
+void wumpus_game::pit_tile::exit(std::weak_ptr<unit> character) {
 
 }
 

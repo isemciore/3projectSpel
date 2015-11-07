@@ -8,6 +8,7 @@
 #include "../stuff/item.h"
 
 #include <memory>
+#include <map>
 #include <vector>
 namespace wumpus_game{
     class env_tile {
@@ -15,22 +16,19 @@ namespace wumpus_game{
         int roomId;
         bool weaponWork;
         bool accessible = true;
-        std::vector<item> stuffInThisRoom;
-        std::vector<unit> charInThisRoom;
-        std::vector<std::weak_ptr<env_tile>> neighbourPointer;
+        std::map<std::string, item*> stuffInRoom;
+        std::map<std::string, std::weak_ptr<unit>> charInRoom;
+        std::map<std::string, std::weak_ptr<env_tile>> neighbourPointer;
         bool dirFeasible[8] = {false};
-        bool dirExist[8] = {false};
 
     public:
         explicit env_tile(int id):roomId(id){}
         env_tile(const env_tile & srcTile) = delete;
 
         virtual ~env_tile();
-
-        virtual int direction() = 0;
-        virtual std::weak_ptr<env_tile> direction(int dir) = 0;
-        virtual void enter(std::shared_ptr<unit> character) = 0;
-        virtual void exit(std::shared_ptr<unit> character) = 0;
+        std::map<std::string,std::weak_ptr<env_tile>> direction(){ return neighbourPointer;};
+        virtual bool enter(std::weak_ptr<unit> character) = 0;
+        virtual void exit(std::weak_ptr<unit> character) = 0;
         virtual void pick_up(item * obj) = 0;
 
         friend class game_map;

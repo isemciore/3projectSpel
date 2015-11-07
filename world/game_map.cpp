@@ -9,6 +9,8 @@
 #include "jungle_tile.h"
 #include "pit_tile.h"
 #include "../unit/paladin.h"
+#include "../unit/wumpus.h"
+#include "../unit/turtle.h"
 wumpus_game::game_map::~game_map() {
 
 }
@@ -63,52 +65,43 @@ void wumpus_game::game_map::bind_SQ_map() {
 
     //BINDING NORTH
     for(auto &activeTile:tilePointers){
-        auto emptyP = [&activeTile](){std::weak_ptr<env_tile> dummy; activeTile->neighbourPointer.push_back(dummy);};
-        auto attachRoom = [&activeTile, this](int roomID){ activeTile->neighbourPointer.push_back((std::weak_ptr<env_tile>) tilePointers[roomID]);};
+        auto attachRoom = [&activeTile, this](int roomID,std::string dir){
+            std::weak_ptr<env_tile> wpTile = tilePointers[roomID];
+            activeTile->neighbourPointer.insert(std::make_pair(dir, wpTile));};
         int currRoom = activeTile->roomId;
         //std::weak_ptr<env_tile> dummy;
         // room does not have wall to north and the room to north is accessible
         if (((currRoom+1)%5) && tilePointers[currRoom+1]->accessible && activeTile->dirFeasible[0]){
-            std::weak_ptr<env_tile> tmpNorthPointer = tilePointers[currRoom+1];
-            activeTile->neighbourPointer.push_back(tmpNorthPointer);
-            activeTile->dirExist[0] = true;
-        }else{emptyP;}//elt->neighbourPointer.push_back(dummy);}
+            attachRoom(currRoom+1,"NORTH");
+        }
         //connect to NORTHEAST add constant 5 to go east, -5 to check west
         if (((currRoom+1)%5) && (currRoom < 20) && tilePointers[currRoom+1+5]->accessible && activeTile->dirFeasible[1]){
-            std::weak_ptr<env_tile> tmpNEP = tilePointers[currRoom+1+5];
-            activeTile->neighbourPointer.push_back(tmpNEP);
-            activeTile->dirExist[1] = true;
-        }else{emptyP;}//elt->neighbourPointer.push_back(dummy);}
+            attachRoom(currRoom+1+5,"NORTHEAST");
+        }
         //east connect
         if ((currRoom < 20) && tilePointers[currRoom+5]->accessible && activeTile->dirFeasible[2]){
-            activeTile->neighbourPointer.push_back((std::weak_ptr<env_tile>) tilePointers[currRoom+5]);
-            activeTile->dirExist[2]=true;
-        } else{emptyP;}
+            attachRoom(currRoom+5,"EAST");
+        }
         //south east connect
         if ((currRoom%5) && (currRoom< 20) && tilePointers[currRoom+5-1]->accessible && activeTile->dirFeasible[3]){
-            attachRoom(currRoom+5-1);
-            activeTile->dirExist[3]=true;
-        }else{emptyP;}
+            attachRoom(currRoom+5-1,"SOUTHEAST");
+        }
         //south
         if ((currRoom%5)                   && tilePointers[currRoom-1]->accessible   && activeTile->dirFeasible[4]){
-            attachRoom(currRoom-1);
-            activeTile->dirExist[4]=true;
-        }else{emptyP;}
+            attachRoom(currRoom-1,"SOUTH");
+        }
         //southWest
         if ((currRoom%5) && (currRoom>4)   && tilePointers[currRoom-1-5]->accessible && activeTile->dirFeasible[5]){
-            attachRoom(currRoom-1-5);
-            activeTile->dirExist[5]=true;
-        }else{emptyP;};
+            attachRoom(currRoom-1-5,"SOUTHWEST");
+        }
         //west
         if ( currRoom > 4                  && tilePointers[currRoom-5]->accessible   && activeTile->dirFeasible[6]){
-            attachRoom(currRoom-5);
-            activeTile->dirExist[6]=true;
-        }else{emptyP;};
+            attachRoom(currRoom-5,"WEST");
+        }
         //NorthWest
         if ( currRoom > 4 && (currRoom+1)%5 && tilePointers[currRoom-5+1]->accessible   && activeTile->dirFeasible[7]){
-            attachRoom(currRoom-5+1);
-            activeTile->dirExist[7]=true;
-        }else{emptyP;};
+            attachRoom(currRoom-5+1,"NORTHWEST");
+        }
 
     }
 
@@ -123,12 +116,25 @@ void wumpus_game::game_map::defInitUnits() {
     spUnit.reset(new() paladin);
     spUnit->setName("Meep");
     addUnitToMap(spUnit,0);
-
-
+    spUnit.reset(new() wumpus);
+    spUnit->setName("Wumpus");
+    addUnitToMap(spUnit,10);
+    int turt_loc[] = {4, 16, 24};
+    for(int elt: turt_loc){
+        spUnit.reset(new() turtle);
+        spUnit->setName("Turtle"+std::to_string(unitCreatorID++));
+        addUnitToMap(spUnit,elt);
+    }
 
 }
 
-bool wumpus_game::game_map::addUnitToMap(std::shared_ptr<unit> SPunit, int locId) {
+bool wumpus_game::game_map::addUnitToMap(std::shared_ptr<unit> spUnit, int locId) {
+    std::weak_ptr<unit> wpUnit = spUnit;
+    bool success = tilePointers[locId]->enter(wpUnit);
+    if (success){
+        unitMap.insert(std::make_pair(spUnit->getName(),spUnit));
+        return true;
+    }
     return false;
 }
 
