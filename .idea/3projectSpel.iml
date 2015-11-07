@@ -10,6 +10,8 @@
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/saveAload.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/saveAload.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/stuff/backPack.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/stuff/backPack.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/stuff/container.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/stuff/container.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/stuff/item.cpp" isTestSource="false" />
