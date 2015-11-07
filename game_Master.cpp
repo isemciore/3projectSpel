@@ -22,7 +22,7 @@ wumpus_game::game_Master::game_Master(std::string &endCondition, wumpus_game::sa
         mapSP->set_n_Tiles(25);
         mapSP->bind_SQ_map();
         mapSP->defInitUnits();
-
+        mapSP->defInitItems();
 
         //mapSP->host_Init_ITEM();
     }
@@ -35,3 +35,6 @@ wumpus_game::game_Master::~game_Master() {
 //check event if char and turtle in same slot
 //false battle, make batlte checks here
 //or if player, then analyze command here
+
+
+//Handle item transfer here

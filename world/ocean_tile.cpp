@@ -18,13 +18,13 @@ void wumpus_game::ocean_tile::exit(std::weak_ptr<unit> character) {
 
 }
 
-void wumpus_game::ocean_tile::pick_up(wumpus_game::item *obj) {
-
-}
-
 wumpus_game::ocean_tile::ocean_tile(int i) : env_tile(i) {
     dirFeasible[0] = true;
     dirFeasible[2] = true;
     dirFeasible[4] = true;
     dirFeasible[6] = true;
+}
+
+bool wumpus_game::ocean_tile::pick_up(std::string string) {
+    return false;
 }

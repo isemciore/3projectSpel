@@ -7,3 +7,7 @@
 wumpus_game::env_tile::~env_tile() {
 
 }
+
+bool wumpus_game::env_tile::add_Item(wumpus_game::item *obj) {
+    stuffInRoom.insert(std::make_pair(obj->get_name(),obj));
+}

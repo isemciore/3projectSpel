@@ -18,10 +18,11 @@ void wumpus_game::pit_tile::exit(std::weak_ptr<unit> character) {
 
 }
 
-void wumpus_game::pit_tile::pick_up(wumpus_game::item *obj) {
-
-}
 
 wumpus_game::pit_tile::pit_tile(int n) : env_tile(n) {
     accessible = false;
+}
+
+bool wumpus_game::pit_tile::pick_up(std::string string) {
+    return false;
 }

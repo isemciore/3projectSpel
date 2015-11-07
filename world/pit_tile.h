@@ -19,7 +19,8 @@ namespace wumpus_game {
 
         virtual void exit(std::weak_ptr<unit> character) override;
 
-        virtual void pick_up(item *obj) override;
+
+        virtual bool pick_up(std::string string);
     };
 }
 

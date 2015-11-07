@@ -29,8 +29,8 @@ namespace wumpus_game{
         std::map<std::string,std::weak_ptr<env_tile>> direction(){ return neighbourPointer;};
         virtual bool enter(std::weak_ptr<unit> character) = 0;
         virtual void exit(std::weak_ptr<unit> character) = 0;
-        virtual void pick_up(item * obj) = 0;
-
+        virtual bool pick_up(std::string) = 0;
+        virtual bool add_Item(item* obj);
         friend class game_map;
 
     private:

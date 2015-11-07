@@ -10,12 +10,16 @@
 namespace wumpus_game {
 
     class item {
-        int weight;
-        int volume;
-        std::string itemName;
+        int _weight;
+        int _volume;
+        std::string _itemName;
 
     public:
+        item(double weight,double volume, std::string name);
         item();
+
+
+        std::string get_name();
 
 
     };

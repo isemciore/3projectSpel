@@ -31,6 +31,8 @@ namespace wumpus_game{
         void defInitUnits();
         bool addUnitToMap(std::shared_ptr<unit> SPunit, int locId);
         bool deleteUnit(std::string name);
+        void defInitItems();
+        bool addItemToMap(item* itemPointer,int locId);
 
     private:
         env_tile* createTile(int tileID);
