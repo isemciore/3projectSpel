@@ -32,8 +32,8 @@
       <sourceFolder url="file://$MODULE_DIR$/unit/unit.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unit/wumpus.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unit/wumpus.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/world/endGtile.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/world/endGtile.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/world/end_Gtile.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/world/end_Gtile.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/env_tile.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/env_tile.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/world/game_map.cpp" isTestSource="false" />

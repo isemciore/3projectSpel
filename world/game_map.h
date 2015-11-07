@@ -16,7 +16,7 @@ namespace wumpus_game{
     private:
         std::vector<std::shared_ptr<env_tile>> tilePointers;
         std::map<std::string,std::shared_ptr<unit>> unitMap;
-        std::weak_ptr<player_ctrl> playerP;
+        std::shared_ptr<player_ctrl> playerP;
         int nActivTiles;
         int max_n_tiles;
         int unitCreatorID = 0;

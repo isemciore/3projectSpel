@@ -10,12 +10,8 @@ wumpus_game::pit_tile::~pit_tile() {
 }
 
 
-bool wumpus_game::pit_tile::enter(std::weak_ptr<unit> character) {
-
-}
-
-void wumpus_game::pit_tile::exit(std::weak_ptr<unit> character) {
-
+bool wumpus_game::pit_tile::enter(std::shared_ptr<unit> character) {
+    return false;
 }
 
 
@@ -25,4 +21,7 @@ wumpus_game::pit_tile::pit_tile(int n) : env_tile(n) {
 
 bool wumpus_game::pit_tile::pick_up(std::string string) {
     return false;
+}
+
+void wumpus_game::pit_tile::exit(std::shared_ptr<unit> character) {
 }

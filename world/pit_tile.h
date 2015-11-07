@@ -15,9 +15,9 @@ namespace wumpus_game {
         using env_tile::env_tile;
         virtual ~pit_tile();
 
-        virtual bool enter(std::weak_ptr<unit> character) override;
+        virtual bool enter(std::shared_ptr<unit> character) override;
 
-        virtual void exit(std::weak_ptr<unit> character) override;
+        virtual void exit(std::shared_ptr<unit> character) override;
 
 
         virtual bool pick_up(std::string string);

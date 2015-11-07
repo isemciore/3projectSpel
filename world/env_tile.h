@@ -10,6 +10,8 @@
 #include <memory>
 #include <map>
 #include <vector>
+#include "../unit/player_ctrl.h"
+
 namespace wumpus_game{
     class env_tile {
     protected://Data
@@ -17,8 +19,8 @@ namespace wumpus_game{
         bool weaponWork;
         bool accessible = true;
         std::map<std::string, item*> stuffInRoom;
-        std::map<std::string, std::weak_ptr<unit>> charInRoom;
-        std::map<std::string, std::weak_ptr<env_tile>> neighbourPointer;
+        std::map<std::string, std::shared_ptr<unit>> charInRoom;
+        std::map<std::string, std::shared_ptr<env_tile>> neighbourPointer;
         bool dirFeasible[8] = {false};
 
     public:
@@ -26,10 +28,10 @@ namespace wumpus_game{
         env_tile(const env_tile & srcTile) = delete;
 
         virtual ~env_tile();
-        std::map<std::string,std::weak_ptr<env_tile>> direction(){ return neighbourPointer;};
-        virtual bool enter(std::weak_ptr<unit> character) = 0;
-        virtual void exit(std::weak_ptr<unit> character) = 0;
-        virtual bool pick_up(std::string) = 0;
+        std::map<std::string,std::shared_ptr<env_tile>> direction(){ return neighbourPointer;};
+        virtual bool enter(std::shared_ptr<unit> character) = 0;
+        virtual void exit(std::shared_ptr<unit> character);
+        virtual bool pick_up(std::string,std::shared_ptr<player_ctrl>);
         virtual bool add_Item(item* obj);
         friend class game_map;
 

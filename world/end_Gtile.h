@@ -8,7 +8,7 @@
 #include "env_tile.h"
 
 namespace wumpus_game {
-    class endGtile : env_tile{
+    class end_Gtile : env_tile{
 
     };
 

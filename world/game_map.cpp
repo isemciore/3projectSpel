@@ -66,10 +66,10 @@ void wumpus_game::game_map::bind_SQ_map() {
     //BINDING NORTH
     for(auto &activeTile:tilePointers){
         auto attachRoom = [&activeTile, this](int roomID,std::string dir){
-            std::weak_ptr<env_tile> wpTile = tilePointers[roomID];
+            std::shared_ptr<env_tile> wpTile = tilePointers[roomID];
             activeTile->neighbourPointer.insert(std::make_pair(dir, wpTile));};
         int currRoom = activeTile->roomId;
-        //std::weak_ptr<env_tile> dummy;
+        //std::shared_ptr<env_tile> dummy;
         // room does not have wall to north and the room to north is accessible
         if (((currRoom+1)%5) && tilePointers[currRoom+1]->accessible && activeTile->dirFeasible[0]){
             attachRoom(currRoom+1,"NORTH");
@@ -129,7 +129,9 @@ void wumpus_game::game_map::defInitUnits() {
 }
 
 bool wumpus_game::game_map::addUnitToMap(std::shared_ptr<unit> spUnit, int locId) {
-    std::weak_ptr<unit> wpUnit = spUnit;
+    std::shared_ptr<unit> wpUnit = spUnit;
+
+
     bool success = tilePointers[locId]->enter(wpUnit);
     if (success){
         unitMap.insert(std::make_pair(spUnit->getName(),spUnit));
@@ -145,6 +147,7 @@ bool wumpus_game::game_map::deleteUnit(std::string name) {
 void wumpus_game::game_map::defInitItems() {
     item* staff = new item(1,0.1,"staff");
     item* bow = new item(1,0.1,"bow");
+
     addItemToMap(staff,1);
     addItemToMap(bow,1);
 }
