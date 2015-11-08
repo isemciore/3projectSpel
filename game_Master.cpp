@@ -49,7 +49,19 @@ wumpus_game::game_Master::game_Master(std::string &endCondition, wumpus_game::sa
 //false battle, make batlte checks here
 void wumpus_game::game_Master::begin_Game() {
     int turnNumber = 0;
-    while(turnNumber < 20){
+    while(turnNumber < 4){
+        //check all tiles and see if wumpus is with player
+        //
+        for(auto &characterSP: allUnits){
+            if (characterSP.second == playerPtr){
+                //Check what is in same tile as player
+                //then list possible action
+
+            } else{
+                characterSP.second->performAction();
+            }
+        }
+
 
         turnNumber++;
     }
