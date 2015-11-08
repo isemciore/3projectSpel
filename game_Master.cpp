@@ -36,12 +36,11 @@ wumpus_game::game_Master::game_Master(std::string &endCondition, wumpus_game::sa
     mapofMFP.insert(std::make_pair("cast",&player_ctrl::castSpell));
 
 
-    std::map<std::string, MFP>::iterator itp = mapofMFP.find("cast");
-    MFP memPointer = itp->second;
-    bool res = ((*playerPtr).*memPointer)("Test output string");
-
-
-    std::cout << res << "\n";
+    //std::map<std::string, MFP>::iterator itp = mapofMFP.find("cast");
+    //MFP memPointer = itp->second;
+    //bool res = ((*playerPtr).*memPointer)("Test output string");
+    //bool res = ((*playerPtr).*((mapofMFP.find("cast"))->second))("Test output string");
+    //std::cout << res << "\n";
 
 }
 //Run, for each char perform action, when return false
@@ -49,16 +48,33 @@ wumpus_game::game_Master::game_Master(std::string &endCondition, wumpus_game::sa
 //false battle, make batlte checks here
 void wumpus_game::game_Master::begin_Game() {
     int turnNumber = 0;
+    bool endTurn = false;
+    std::string keyw;
+    std::string memFunCmd;
     while(turnNumber < 4){
         //check all tiles and see if wumpus is with player
         //
         for(auto &characterSP: allUnits){
             if (characterSP.second == playerPtr){
-                //Check what is in same tile as player
+                //Check what is in same tile as player //eventual message
                 //then list possible action
-
+                while(!endTurn){
+                    std::cin >> keyw;
+                    getline(std::cin,memFunCmd);
+                    std::map<std::string, MFP>::iterator iTP = mapofMFP.find(keyw);
+                    if (iTP != mapofMFP.end()){
+                        MFP memPointer = iTP->second;
+                        endTurn = ((*playerPtr).*memPointer)(memFunCmd);
+                    }else{
+                        std::cout << "First word not keyword \n";
+                    }
+                }
+                endTurn = false;
+                //CHeck if walked into wumpus //IF break
+                //check if wumpus is still left
             } else{
                 characterSP.second->performAction();
+                //Check if walked into user room, then message //if wumpus, break
             }
         }
 

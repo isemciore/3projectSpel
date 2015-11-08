@@ -22,10 +22,8 @@ namespace wumpus_game {
         bool performAction();
 
         bool travelDirection(std::string);
-        bool castSpell(std::string input){
-            std::cout << input<<"\n";
-            return true;
-        }
+        bool castSpell(std::string input);
+
         bool shotArrow(std::string);
         bool pickUpItem(std::string);
         bool dropItem(std::string);

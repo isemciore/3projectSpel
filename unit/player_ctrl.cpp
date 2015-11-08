@@ -14,3 +14,8 @@ bool wumpus_game::player_ctrl::performAction() {
 }
 
 
+bool wumpus_game::player_ctrl::castSpell(std::string input) {
+
+
+    return false;
+}

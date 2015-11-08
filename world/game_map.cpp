@@ -114,9 +114,11 @@ void wumpus_game::game_map::bind_SQ_map() {
 void wumpus_game::game_map::defInitUnits() {
     //Player name Meep
     //def paladin
+    playerP.reset(new() paladin);
+    playerP->setName("Meep");
     std::shared_ptr<unit> spUnit;
-    spUnit.reset(new() paladin);
-    spUnit->setName("Meep");
+    spUnit = playerP;
+
     addUnitToMap(spUnit,0);
     spUnit.reset(new() wumpus);
     spUnit->setName("Wumpus");
