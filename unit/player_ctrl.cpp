@@ -4,10 +4,13 @@
 
 #include "player_ctrl.h"
 
+wumpus_game::player_ctrl::~player_ctrl() {
+
+}
+
+
 bool wumpus_game::player_ctrl::performAction() {
     return false;
 }
 
-wumpus_game::player_ctrl::~player_ctrl() {
 
-}

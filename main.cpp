@@ -11,6 +11,8 @@ int main() {
         wumpus_game::saveAload saveFile;//INISTREAM TO SAVEFILE
         wumpus_game::game_Master currentGame(exitCond,saveFile);
 
+        currentGame.begin_Game();
+
 
         break;
     }

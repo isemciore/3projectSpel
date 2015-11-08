@@ -12,21 +12,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad93911a-2b3d-4fac-830f-f140423a5bfd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stuff/backPack.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stuff/backPack.h" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/world/endGtile.cpp" afterPath="$PROJECT_DIR$/world/end_Gtile.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/world/endGtile.h" afterPath="$PROJECT_DIR$/world/end_Gtile.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/3projectSpel.iml" afterPath="$PROJECT_DIR$/.idea/3projectSpel.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/world/env_tile.cpp" afterPath="$PROJECT_DIR$/world/env_tile.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/world/env_tile.h" afterPath="$PROJECT_DIR$/world/env_tile.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stuff/container.h" afterPath="$PROJECT_DIR$/stuff/container.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game_Master.cpp" afterPath="$PROJECT_DIR$/game_Master.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game_Master.h" afterPath="$PROJECT_DIR$/game_Master.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/world/game_map.cpp" afterPath="$PROJECT_DIR$/world/game_map.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/world/game_map.h" afterPath="$PROJECT_DIR$/world/game_map.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/world/ocean_tile.cpp" afterPath="$PROJECT_DIR$/world/ocean_tile.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/world/ocean_tile.h" afterPath="$PROJECT_DIR$/world/ocean_tile.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/world/pit_tile.cpp" afterPath="$PROJECT_DIR$/world/pit_tile.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/world/pit_tile.h" afterPath="$PROJECT_DIR$/world/pit_tile.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit/player_ctrl.cpp" afterPath="$PROJECT_DIR$/unit/player_ctrl.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit/player_ctrl.h" afterPath="$PROJECT_DIR$/unit/player_ctrl.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit/unit.h" afterPath="$PROJECT_DIR$/unit/unit.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="3projectSpel.iws" />
@@ -48,11 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="game_Master.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/game_Master.h">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.375">
-              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -62,7 +56,27 @@
         <entry file="file://$PROJECT_DIR$/world/game_map.h">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+              <caret line="36" column="70" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_Master.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/game_Master.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5546875">
+              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_Master.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game_Master.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -71,8 +85,18 @@
       <file leaf-file-name="game_map.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/world/game_map.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6229508">
-              <caret line="128" column="1" selection-start-line="128" selection-start-column="1" selection-end-line="128" selection-end-column="1" />
+            <state vertical-scroll-proportion="-42.19672">
+              <caret line="152" column="29" selection-start-line="152" selection-start-column="29" selection-end-line="152" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="container.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stuff/container.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -88,68 +112,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="env_tile.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/world/env_tile.h">
+      <file leaf-file-name="unit.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unit/unit.h">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding>
-                <element signature="e#105#130#0" expanded="true" />
+                <element signature="e#106#123#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="env_tile.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/world/env_tile.cpp">
+      <file leaf-file-name="player_ctrl.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unit/player_ctrl.h">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+              <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
               <folding>
-                <marker date="1446920551530" expanded="true" signature="655:1043" placeholder="{...}" />
+                <element signature="e#120#139#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pit_tile.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/world/pit_tile.h">
+      <file leaf-file-name="player_ctrl.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unit/player_ctrl.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ocean_tile.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/world/ocean_tile.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ocean_tile.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/world/ocean_tile.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pit_tile.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/world/pit_tile.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
-              <folding>
-                <marker date="1446919840140" expanded="true" signature="251:278" placeholder="{...}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -185,12 +177,8 @@
         <option value="$PROJECT_DIR$/world/desert_tile.h" />
         <option value="$PROJECT_DIR$/world/jungle_tile.cpp" />
         <option value="$PROJECT_DIR$/direction.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/world/map.cpp" />
         <option value="$PROJECT_DIR$/world/map.h" />
-        <option value="$PROJECT_DIR$/unit/player_ctrl.cpp" />
-        <option value="$PROJECT_DIR$/unit/unit.h" />
-        <option value="$PROJECT_DIR$/unit/player_ctrl.h" />
         <option value="$PROJECT_DIR$/unit/paladin.h" />
         <option value="$PROJECT_DIR$/unit/npc.h" />
         <option value="$PROJECT_DIR$/unit/npc.cpp" />
@@ -203,21 +191,25 @@
         <option value="$PROJECT_DIR$/stuff/container.cpp" />
         <option value="$PROJECT_DIR$/stuff/bow.h" />
         <option value="$PROJECT_DIR$/stuff/bow.cpp" />
-        <option value="$PROJECT_DIR$/stuff/container.h" />
-        <option value="$PROJECT_DIR$/game_Master.cpp" />
         <option value="$PROJECT_DIR$/stuff/item.h" />
         <option value="$PROJECT_DIR$/stuff/item.cpp" />
         <option value="$PROJECT_DIR$/world/pit_tile.h" />
         <option value="$PROJECT_DIR$/world/end_Gtile.cpp" />
-        <option value="$PROJECT_DIR$/game_Master.h" />
         <option value="$PROJECT_DIR$/world/env_tile.h" />
-        <option value="$PROJECT_DIR$/world/game_map.h" />
         <option value="$PROJECT_DIR$/world/ocean_tile.cpp" />
         <option value="$PROJECT_DIR$/world/ocean_tile.h" />
         <option value="$PROJECT_DIR$/world/pit_tile.cpp" />
         <option value="$PROJECT_DIR$/world/env_tile.cpp" />
-        <option value="$PROJECT_DIR$/world/game_map.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/stuff/container.h" />
+        <option value="$PROJECT_DIR$/world/game_map.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/unit/player_ctrl.cpp" />
+        <option value="$PROJECT_DIR$/unit/unit.h" />
+        <option value="$PROJECT_DIR$/unit/player_ctrl.h" />
+        <option value="$PROJECT_DIR$/world/game_map.h" />
+        <option value="$PROJECT_DIR$/game_Master.h" />
+        <option value="$PROJECT_DIR$/game_Master.cpp" />
       </list>
     </option>
   </component>
@@ -423,14 +415,20 @@
       <option name="project" value="LOCAL" />
       <updated>1446917199335</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="begin adding bp">
+      <created>1446920693897</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1446920693897</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09443232" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1260917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -484,11 +482,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="uhh Repairing missclick..." />
     <MESSAGE value="--" />
-    <option name="LAST_COMMIT_MESSAGE" value="--" />
+    <MESSAGE value="begin adding bp" />
+    <option name="LAST_COMMIT_MESSAGE" value="begin adding bp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="21" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -620,14 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="63" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/unit/turtle.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -660,26 +651,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unit/player_ctrl.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/unit/npc.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unit/player_ctrl.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -748,36 +723,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stuff/container.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding>
-            <element signature="e#116#133#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/world/end_Gtile.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unit/unit.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game_Master.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -811,7 +760,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
           <folding>
-            <marker date="1446919840140" expanded="true" signature="251:278" placeholder="{...}" />
+            <marker date="1446919840140" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -821,7 +770,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
           <folding>
-            <element signature="e#105#130#0" expanded="true" />
+            <element signature="e#105#130#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -831,7 +780,35 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
           <folding>
-            <marker date="1446920551530" expanded="true" signature="655:1043" placeholder="{...}" />
+            <marker date="1446920551530" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit/player_ctrl.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit/player_ctrl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+          <folding>
+            <element signature="e#120#139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit/unit.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding>
+            <element signature="e#106#123#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -844,10 +821,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/stuff/container.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/world/game_map.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6229508">
-          <caret line="128" column="1" selection-start-line="128" selection-start-column="1" selection-end-line="128" selection-end-column="1" />
+        <state vertical-scroll-proportion="-42.19672">
+          <caret line="152" column="29" selection-start-line="152" selection-start-column="29" selection-end-line="152" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -855,15 +848,23 @@
     <entry file="file://$PROJECT_DIR$/world/game_map.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <caret line="36" column="70" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game_Master.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.375">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game_Master.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5546875">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
           <folding />
         </state>
       </provider>

@@ -11,6 +11,8 @@
 #include "../unit/paladin.h"
 #include "../unit/wumpus.h"
 #include "../unit/turtle.h"
+#include "../stuff/container.h"
+
 wumpus_game::game_map::~game_map() {
 
 }
@@ -147,7 +149,8 @@ bool wumpus_game::game_map::deleteUnit(std::string name) {
 void wumpus_game::game_map::defInitItems() {
     item* staff = new item(1,0.1,"staff");
     item* bow = new item(1,0.1,"bow");
-
+    item* backpack = new container(10,0.5,"Normal Backpack");
+    addItemToMap(backpack,0);
     addItemToMap(staff,1);
     addItemToMap(bow,1);
 }

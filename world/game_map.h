@@ -33,6 +33,9 @@ namespace wumpus_game{
         bool deleteUnit(std::string name);
         void defInitItems();
         bool addItemToMap(item* itemPointer,int locId);
+        std::map<std::string,std::shared_ptr<unit>> getUnitMap(){ return unitMap;};
+        std::shared_ptr<player_ctrl> getPlayerPtr(){ return playerP;};
+
 
     private:
         env_tile* createTile(int tileID);

@@ -15,12 +15,16 @@
 // after every turn, it reads through publishing style.
 namespace wumpus_game {
     class game_Master {
+        typedef bool (player_ctrl::* MFP)(std::string);
+
     private:
         const int DEFAULT_MAP_SIZE = 25;
         std::shared_ptr<game_map> mapSP;                     //
         std::map<std::string,std::shared_ptr<unit>> allUnits;    // All items is handled via new and delete
         std::string& endReason;
         saveAload& saveFile;
+        std::shared_ptr<player_ctrl> playerPtr;
+        std::map<std::string, MFP> mapofMFP;
 
     public:
         game_Master() = delete;
@@ -29,7 +33,7 @@ namespace wumpus_game {
         ~game_Master();
 
 
-
+        void begin_Game();
 
         //Char input, if return false, then exit game, look if it is due to save game or load game
         //if load game report back to main and restart

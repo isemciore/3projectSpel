@@ -9,7 +9,7 @@
 #include "item.h"
 #include <map>
 namespace wumpus_game {
-    class container : item {
+    class container : public item {
         //std::vector<item> itemsInBp;
         std::map<std::string, item*> stuffInContainer;
     private:
