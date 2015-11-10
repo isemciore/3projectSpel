@@ -11,3 +11,11 @@ bool wumpus_game::npc::performAction() {
 wumpus_game::npc::~npc() {
 
 }
+
+bool wumpus_game::npc::takeDamage(int i) {
+    return false;
+}
+
+int wumpus_game::npc::attackDamage() {
+    return 0;
+}

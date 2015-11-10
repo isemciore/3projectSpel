@@ -28,11 +28,15 @@ namespace wumpus_game{
         env_tile(const env_tile & srcTile) = delete;
 
         virtual ~env_tile();
-        std::map<std::string,std::shared_ptr<env_tile>> direction(){ return neighbourPointer;};
+        std::map<std::string,std::shared_ptr<env_tile>>& direction(){ return neighbourPointer;};
         virtual bool enter(std::shared_ptr<unit> character) = 0;
         virtual void exit(std::shared_ptr<unit> character);
-        virtual bool pick_up(std::string,std::shared_ptr<player_ctrl>);
+        virtual item* get_item(std::string);
         virtual bool add_Item(item* obj);
+        std::map<std::string, std::shared_ptr<unit>>& getCharInRoom(){ return charInRoom;}
+        std::map<std::string, item*>& getItemInRoom(){return stuffInRoom;}
+
+
         friend class game_map;
 
     private:

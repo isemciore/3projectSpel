@@ -9,14 +9,11 @@
 #include <memory>
 #include "../stuff/item.h"
 
-class env_tile;
-
 namespace wumpus_game{
 
     class unit {
     protected:
         std::string nameID;
-        std::shared_ptr<env_tile> unitCurrLoc;
 
 
     public:
@@ -24,9 +21,14 @@ namespace wumpus_game{
         virtual ~unit(){};
 
         void setName(std::string name) {nameID=name;}
-        std::string getName(){ return nameID;}
+        std::string getName() const { return nameID;}
         virtual bool performAction() = 0;
 
+
+        virtual bool takeDamage(int) = 0;
+        virtual int attackDamage() = 0;
+
+        virtual bool retaliation(){ return true;}
     protected:
 
 
@@ -34,6 +36,19 @@ namespace wumpus_game{
 
 
 }
+
+namespace std {
+    template <>
+    class hash<wumpus_game::unit>{
+    public :
+        size_t operator()(const wumpus_game::unit &src ) const
+        {
+            return hash<string>()(src.getName());
+        }
+    };
+};
+
+
 
 #endif //INC_3PROJECTSPEL_UNIT_H
 //

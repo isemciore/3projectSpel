@@ -11,6 +11,12 @@ namespace wumpus_game {
     class npc : public unit{
     public:
         npc():unit(){};
+
+
+        virtual bool takeDamage(int i);
+
+        virtual int attackDamage();
+
         ~npc();
 
         virtual bool performAction();

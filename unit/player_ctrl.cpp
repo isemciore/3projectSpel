@@ -13,9 +13,10 @@ bool wumpus_game::player_ctrl::performAction() {
     return false;
 }
 
-
-bool wumpus_game::player_ctrl::castSpell(std::string input) {
-
-
+bool wumpus_game::player_ctrl::takeDamage(int i) {
     return false;
+}
+
+int wumpus_game::player_ctrl::attackDamage() {
+    return 0;
 }

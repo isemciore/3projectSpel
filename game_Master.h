@@ -15,7 +15,7 @@
 // after every turn, it reads through publishing style.
 namespace wumpus_game {
     class game_Master {
-        typedef bool (player_ctrl::* MFP)(std::string);
+        typedef std::pair<bool,std::string> (game_map::* MFP)(std::shared_ptr<unit> src, std::vector<std::string> argsCmd);
 
     private:
         const int DEFAULT_MAP_SIZE = 25;

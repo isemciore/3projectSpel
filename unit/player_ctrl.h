@@ -17,17 +17,11 @@ namespace wumpus_game {
         ~player_ctrl();
         item* rightHand;
         item* leftHand;
+        item* googles;
         container* back;
 
         bool performAction();
 
-        bool travelDirection(std::string);
-        bool castSpell(std::string input);
-
-        bool shotArrow(std::string);
-        bool pickUpItem(std::string);
-        bool dropItem(std::string);
-        bool listNeightBours(std::string);
         //travel direction
         //cast spell Dir
         //shot arrow Dir
@@ -36,6 +30,9 @@ namespace wumpus_game {
         //list neighbours direction
         //
 
+        virtual bool takeDamage(int i) override;
+
+        virtual int attackDamage() override;
     };
 }
 

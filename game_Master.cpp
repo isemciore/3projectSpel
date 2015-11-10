@@ -3,6 +3,8 @@
 //
 
 #include "game_Master.h"
+#include <sstream>
+#include <iterator>
 
 //Map owns only sharedpointer to all tiles
 //game_master owns all shared pointer character
@@ -33,7 +35,13 @@ wumpus_game::game_Master::game_Master(std::string &endCondition, wumpus_game::sa
     mpFunctionP.insert(std::make_pair("cast", &player_ctrl::castSpell));
 */
     //Insert all player member function here
-    mapofMFP.insert(std::make_pair("cast",&player_ctrl::castSpell));
+    mapofMFP.insert(std::make_pair("travel",&game_map::travel));
+    mapofMFP.insert(std::make_pair("attack",&game_map::attack));
+    mapofMFP.insert(std::make_pair("cast",&game_map::cast));
+    mapofMFP.insert(std::make_pair("shoot",&game_map::shoot));
+    mapofMFP.insert(std::make_pair("pick",&game_map::pick));
+    mapofMFP.insert(std::make_pair("drop",&game_map::drop));
+
 
 
     //std::map<std::string, MFP>::iterator itp = mapofMFP.find("cast");
@@ -52,6 +60,7 @@ void wumpus_game::game_Master::begin_Game() {
     std::string keyw;
     std::string memFunCmd;
     while(turnNumber < 4){
+        std::cout << "current turn number "<<turnNumber <<"\n";
         //check all tiles and see if wumpus is with player
         //
         for(auto &characterSP: allUnits){
@@ -61,10 +70,20 @@ void wumpus_game::game_Master::begin_Game() {
                 while(!endTurn){
                     std::cin >> keyw;
                     getline(std::cin,memFunCmd);
+
+                    std::stringstream ss(memFunCmd);
+                    std::istream_iterator<std::string> begin(ss);
+                    std::istream_iterator<std::string> end;
+                    std::vector<std::string> vstrings(begin, end);
+
+
                     std::map<std::string, MFP>::iterator iTP = mapofMFP.find(keyw);
                     if (iTP != mapofMFP.end()){
                         MFP memPointer = iTP->second;
-                        endTurn = ((*playerPtr).*memPointer)(memFunCmd);
+                        std::shared_ptr<unit> uSP = characterSP.second;
+                        std::pair<bool,std::string> res = ((*mapSP).*memPointer)(uSP,vstrings);
+                        endTurn = res.first;
+                        //READ END FOR EXTRA INFOOMRATION FROM STR
                     }else{
                         std::cout << "First word not keyword \n";
                     }
