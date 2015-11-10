@@ -11,17 +11,7 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad93911a-2b3d-4fac-830f-f140423a5bfd" name="Default" comment="begin member function pointer map, &#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stuff/container.cpp" afterPath="$PROJECT_DIR$/stuff/container.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stuff/container.h" afterPath="$PROJECT_DIR$/stuff/container.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/world/env_tile.cpp" afterPath="$PROJECT_DIR$/world/env_tile.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/world/env_tile.h" afterPath="$PROJECT_DIR$/world/env_tile.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/world/game_map.cpp" afterPath="$PROJECT_DIR$/world/game_map.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/world/game_map.h" afterPath="$PROJECT_DIR$/world/game_map.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stuff/item.h" afterPath="$PROJECT_DIR$/stuff/item.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit/player_ctrl.cpp" afterPath="$PROJECT_DIR$/unit/player_ctrl.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit/player_ctrl.h" afterPath="$PROJECT_DIR$/unit/player_ctrl.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit/unit.h" afterPath="$PROJECT_DIR$/unit/unit.h" />
+    <list default="true" id="ad93911a-2b3d-4fac-830f-f140423a5bfd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="3projectSpel.iws" />
@@ -392,7 +382,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447152217472</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="choas....">
+      <created>1447170061058</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1447170061058</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -455,7 +451,8 @@
     <MESSAGE value="--" />
     <MESSAGE value="begin adding bp" />
     <MESSAGE value="begin member function pointer map, &#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="begin member function pointer map, &#10;" />
+    <MESSAGE value="choas...." />
+    <option name="LAST_COMMIT_MESSAGE" value="choas...." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
