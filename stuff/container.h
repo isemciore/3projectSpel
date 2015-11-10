@@ -7,27 +7,34 @@
 
 #include <vector>
 #include "item.h"
+#include <memory>
 #include <map>
 namespace wumpus_game {
     class container : public item {
         //std::vector<item> itemsInBp;
-        std::map<std::string, item*> stuffInContainer;
     private:
         int _hold_weight;
         int _hold_volume;
+        std::map<std::string, item*> stuffInContainer;
 
     public:
         container(int hold_weight, int hold_volume,std::string name);
-
         container(const container &) = delete;
-
-        bool add(const item *);
-        item* dropFromBP(std::string);
+        bool add(item*){ return true};
+        item* getFromBP(std::string itemName){
+            auto itPair = stuffInContainer.find(itemName);
+            if (itPair!= stuffInContainer.end()){
+                item* itemPtr = itPair->second;
+                stuffInContainer.erase(itPair);
+                return itemPtr;
+            }
+            return nullptr;
+        }
         bool consume(const item &);
-        bool move(const item & item_to_be_moved, const container& dst_cont);
-        bool containItem(std::string item);
-
-
+        bool containItem(std::string item) {
+            auto itPair = stuffInContainer.find(item);
+            return itPair == stuffInContainer.end();
+        }
 
 
     };

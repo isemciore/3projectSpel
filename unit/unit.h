@@ -7,6 +7,7 @@
 
 #include <string>
 #include <memory>
+#include <vector>
 #include "../stuff/item.h"
 
 namespace wumpus_game{
@@ -29,6 +30,11 @@ namespace wumpus_game{
         virtual int attackDamage() = 0;
 
         virtual bool retaliation(){ return true;}
+
+        virtual bool hasItem(std::string){return false;}
+        virtual bool addItem(item* itemPtr, std::string location){ return false;}
+        virtual item* get_item(std::string itemName){ return nullptr;}
+
     protected:
 
 

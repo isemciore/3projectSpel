@@ -44,10 +44,12 @@ namespace wumpus_game{
 
         std::pair<bool,std::string> travel(std::shared_ptr<unit> src, std::vector<std::string> commandArgs);
         std::pair<bool,std::string> attack(std::shared_ptr<unit> src, std::vector<std::string> commandArgs);
-        std::pair<bool,std::string> cast(std::shared_ptr<unit> src, std::vector<std::string> commandArgs){ return std::make_pair(true,"something");}
-        std::pair<bool,std::string> shoot(std::shared_ptr<unit> src, std::vector<std::string> commandArgs){ return std::make_pair(true,"something");}
+        std::pair<bool,std::string> cast(std::shared_ptr<unit> src, std::vector<std::string> commandArgs);//{return std::make_pair(true,"something");}
+        std::pair<bool,std::string> shoot(std::shared_ptr<unit> src, std::vector<std::string> commandArgs);//{ return std::make_pair(true,"something");}
         std::pair<bool,std::string> pick(std::shared_ptr<unit> src, std::vector<std::string> commandArgs);
-        std::pair<bool,std::string> drop(std::shared_ptr<unit> src, std::vector<std::string> commandArgs){ return std::make_pair(true,"something");}
+        std::pair<bool,std::string> drop(std::shared_ptr<unit> src, std::vector<std::string> commandArgs);
+        std::pair<bool,std::string> moveItem(std::shared_ptr<unit> src, std::vector<std::string> commandArgs){return std::make_pair(
+                    false,"something");}
         /*bool attack(std::shared_ptr<unit> src, std::string commandArgs){ return true;}
         bool cast(std::shared_ptr<unit> src, std::string commandsArgs){ return true;}
         bool shoot(std::shared_ptr<unit> src, std::string commandsArgs){ return true;}
@@ -57,7 +59,7 @@ namespace wumpus_game{
 
     private:
         env_tile* createTile(int tileID);
-
+        std::pair<bool,std::string> distAtkHelp(std::shared_ptr<unit> plPtr, std::vector<std::string> commandArgs);
     };
 
 }

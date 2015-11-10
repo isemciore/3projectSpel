@@ -13,7 +13,7 @@ namespace wumpus_game {
         int _weight;
         int _volume;
         std::string _itemName;
-
+        bool containOther = false;
     public:
         item(double weight,double volume, std::string name);
         item();

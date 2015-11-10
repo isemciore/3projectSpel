@@ -31,7 +31,9 @@ namespace wumpus_game{
         std::map<std::string,std::shared_ptr<env_tile>>& direction(){ return neighbourPointer;};
         virtual bool enter(std::shared_ptr<unit> character) = 0;
         virtual void exit(std::shared_ptr<unit> character);
-        virtual item* get_item(std::string);
+        virtual bool move_it_to_char(std::shared_ptr<unit>, std::vector<std::string>);
+        virtual bool move_it_to_tile(std::shared_ptr<unit>, std::vector<std::string>);
+
         virtual bool add_Item(item* obj);
         std::map<std::string, std::shared_ptr<unit>>& getCharInRoom(){ return charInRoom;}
         std::map<std::string, item*>& getItemInRoom(){return stuffInRoom;}

@@ -30,7 +30,15 @@ namespace wumpus_game {
         //list neighbours direction
         //
 
+        virtual bool hasItem(std::string string) override;
+
+        virtual bool addItem(item *itemPtr, std::string location) override;
+
+        virtual item *get_item(std::string itemName) override;
+
         virtual bool takeDamage(int i) override;
+
+        virtual bool moveItem(std::vector<std::string> vStringcmd);
 
         virtual int attackDamage() override;
     };

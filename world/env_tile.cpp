@@ -29,9 +29,29 @@ void wumpus_game::env_tile::exit(std::shared_ptr<wumpus_game::unit> character) {
 
 }
 
-wumpus_game::item *wumpus_game::env_tile::get_item(std::string objName) {
-    std::map<std::string, item*>::iterator iterator = stuffInRoom.find(objName);
-    item* itemPointer = iterator->second;
-    stuffInRoom.erase(iterator);
-    return itemPointer;
+
+bool wumpus_game::env_tile::move_it_to_char(std::shared_ptr<wumpus_game::unit> srcPtr, std::vector<std::string> strVector) {
+    //vector[0];//Pick $item with $right/left hand
+    std::map<std::string, item*>::iterator itemIterator = stuffInRoom.find(strVector[0]);
+    if (itemIterator!= stuffInRoom.end()){
+        item* itemPointer = itemIterator->second;
+        bool puSuccess = srcPtr->addItem(itemPointer,strVector[2]);
+        if(puSuccess){
+            stuffInRoom.erase(itemIterator);
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool wumpus_game::env_tile::move_it_to_tile(std::shared_ptr<wumpus_game::unit> ptr, std::vector<std::string> vector) {
+    item* itemPtr = ptr->get_item(vector[0]);
+    if (itemPtr == nullptr){
+        return false;
+    }
+    else{
+        stuffInRoom.insert(std::make_pair(itemPtr->get_name(),itemPtr));
+        return true;
+    }
 }
