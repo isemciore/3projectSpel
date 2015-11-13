@@ -10,37 +10,23 @@
 #include "../stuff/container.h"
 
 namespace wumpus_game {
-    class player_ctrl : public unit{
+    class unit;
 
+    class player_ctrl : public unit {
     public:
-        player_ctrl():unit(){};
+        using unit::unit;
+        player_ctrl();
         ~player_ctrl();
         item* rightHand;
         item* leftHand;
-        item* googles;
+        item* head;
         container* back;
 
+        virtual bool takeDamage(int i);
+
+        virtual int attackDamage();
+
         bool performAction();
-
-        //travel direction
-        //cast spell Dir
-        //shot arrow Dir
-        //pick Up item
-        //drop item
-        //list neighbours direction
-        //
-
-        virtual bool hasItem(std::string string) override;
-
-        virtual bool addItem(item *itemPtr, std::string location) override;
-
-        virtual item *get_item(std::string itemName) override;
-
-        virtual bool takeDamage(int i) override;
-
-        virtual bool moveItem(std::vector<std::string> vStringcmd);
-
-        virtual int attackDamage() override;
     };
 }
 

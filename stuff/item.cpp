@@ -14,3 +14,7 @@ wumpus_game::item::item(double weight, double volume, std::string name)
 std::string wumpus_game::item::get_name() {
     return _itemName;
 }
+
+bool wumpus_game::item::isItemName(std::string itemn) {
+    return (bool) (_itemName.compare(itemn));
+}

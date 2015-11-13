@@ -36,11 +36,11 @@ wumpus_game::game_Master::game_Master(std::string &endCondition, wumpus_game::sa
 */
     //Insert all player member function here
     mapofMFP.insert(std::make_pair("travel",&game_map::travel));
-    mapofMFP.insert(std::make_pair("attack",&game_map::attack));
+    /*mapofMFP.insert(std::make_pair("attack",&game_map::attack));
     mapofMFP.insert(std::make_pair("cast",&game_map::cast));
     mapofMFP.insert(std::make_pair("shoot",&game_map::shoot));
     mapofMFP.insert(std::make_pair("pick",&game_map::pick));
-    mapofMFP.insert(std::make_pair("drop",&game_map::drop));
+    mapofMFP.insert(std::make_pair("drop",&game_map::drop));*/
 
 
 

@@ -9,16 +9,19 @@
 #include <memory>
 #include <vector>
 #include "../stuff/item.h"
-
+#include "../world/env_tile.h"
 namespace wumpus_game{
+    class env_tile;
 
     class unit {
     protected:
         std::string nameID;
-
+        std::weak_ptr<env_tile> currentLPT;
+        std::string unitType;
 
     public:
-        unit(){}
+        unit();
+        unit(std::string nameID,std::weak_ptr<env_tile>);
         virtual ~unit(){};
 
         void setName(std::string name) {nameID=name;}

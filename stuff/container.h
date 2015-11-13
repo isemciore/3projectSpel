@@ -20,7 +20,7 @@ namespace wumpus_game {
     public:
         container(int hold_weight, int hold_volume,std::string name);
         container(const container &) = delete;
-        bool add(item*){ return true};
+        bool add(item*){ return true;};
         item* getFromBP(std::string itemName){
             auto itPair = stuffInContainer.find(itemName);
             if (itPair!= stuffInContainer.end()){

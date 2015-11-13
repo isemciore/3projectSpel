@@ -6,10 +6,10 @@
 #include <memory>
 #include <algorithm>
 #include "game_map.h"
-#include "ocean_tile.h"
-#include "desert_tile.h"
-#include "jungle_tile.h"
-#include "pit_tile.h"
+#include "world/ocean_tile.h"
+#include "world/desert_tile.h"
+#include "world/jungle_tile.h"
+#include "world/pit_tile.h"
 #include "../unit/paladin.h"
 #include "../unit/wumpus.h"
 #include "../unit/turtle.h"
@@ -116,10 +116,15 @@ void wumpus_game::game_map::bind_SQ_map() {
 void wumpus_game::game_map::defInitUnits() {
     //Player name Meep
     //def paladin
+    /*
     playerP.reset(new() paladin);
-    playerP->setName("Meep");
+    playerP->setName("Meep");*/
+
+    playerP.reset(new paladin("Meep",tilePointers[0]));
     std::shared_ptr<unit> spUnit;
     spUnit = playerP;
+
+
 
     addUnitToMap(spUnit,0);
     spUnit.reset(new() wumpus);
@@ -166,105 +171,7 @@ bool wumpus_game::game_map::addItemToMap(wumpus_game::item *itemPointer, int loc
 }
 
 
-std::pair<bool, std::string> wumpus_game::game_map::travel(std::shared_ptr<unit> src, std::vector<std::string> vcmdArgs) {
-    //string prase
-    std::string commandArgs = vcmdArgs[0];
-    commandArgs.erase(std::remove_if(commandArgs.begin(), commandArgs.end(), isspace), commandArgs.end());//wish boost as allowed...
-    std::transform(commandArgs.begin(), commandArgs.end(), commandArgs.begin(), toupper);
-    //find user location
-    int charTileIdLoc = unitToLocMap.find(src->getName())->second;
-    //Get map over neigbours at that location
-    std::map<std::string, std::shared_ptr<env_tile>>& neiMap = tilePointers[charTileIdLoc]->direction();
-    //get iterator which wpoints to desired direction
-    std::map<std::string, std::shared_ptr<env_tile>>::iterator itNeib = neiMap.find(commandArgs);
-    if (itNeib != neiMap.end()){
-        if (itNeib->second->enter(src)){
-            tilePointers[charTileIdLoc]->exit(src);
-            unitToLocMap.erase(src->getName());
-            unitToLocMap.insert(std::make_pair(src->getName(),itNeib->second->roomId));
-            return std::make_pair(true,"something");
-        }
-        //Fail to enter
-        return std::make_pair(false,"something");
-    }
-    return std::make_pair(false,"something");
-}
-
-std::pair<bool, std::string> wumpus_game::game_map::attack(std::shared_ptr<unit> src, std::vector<std::string> vcmdArgs) {
-    std::string commandArgs = vcmdArgs[0];
-    commandArgs.erase(std::remove_if(commandArgs.begin(), commandArgs.end(), isspace), commandArgs.end());
-    int charTileIdLoc = unitToLocMap.find(src->getName())->second;
-    //Get map over char
-    std::map<std::string, std::shared_ptr<unit>>& charInRoom = tilePointers[charTileIdLoc]->charInRoom;
-    //get pointer to attack target
-    std::map<std::string, std::shared_ptr<unit>>::iterator tgtPIt = charInRoom.find(commandArgs);
-    if (tgtPIt != charInRoom.end()){
-        bool tgtKilled = tgtPIt->second->takeDamage(src->attackDamage());
-        if(tgtPIt->second->retaliation() && !tgtKilled){
-            bool srcKilled = src->takeDamage(tgtPIt->second->attackDamage());
-            if (srcKilled){
-                unitToLocMap.erase(src->getName());
-                tilePointers[charTileIdLoc]->exit(src);
-                //charInRoom.erase(src->getName());
-            }
-        }
-        else if (tgtKilled){
-            unitToLocMap.erase(src->getName());
-            tilePointers[charTileIdLoc]->exit(tgtPIt->second);
-            //charInRoom.erase(tgtPIt);
-        }
-    }
-    return std::make_pair(false,"derp");
-
-
-
-}
-
-std::pair<bool, std::string> wumpus_game::game_map::pick(std::shared_ptr<unit> src, std::vector<std::string> vcArgs) {
-    int charTileIdLoc = unitToLocMap.find(src->getName())->second;
-    bool result = tilePointers[charTileIdLoc]->move_it_to_char(src,vcArgs);
-    return std::make_pair(result,"missing item");
-}
-
-std::pair<bool, std::string> wumpus_game::game_map::drop(std::shared_ptr<unit> src,
-                                                         std::vector<std::string> commandArgs) {
-    int charTileIdLoc = unitToLocMap.find(src->getName())->second;
-    bool result = tilePointers[charTileIdLoc]->move_it_to_tile(src,commandArgs);
-    return std::make_pair(result,"derp");
-}
-
-std::pair<bool, std::string> wumpus_game::game_map::cast(std::shared_ptr<unit> src,
-                                                         std::vector<std::string> commandArgs) {
-
-    return distAtkHelp(src,commandArgs);
-    //Check player mana and have staff
-    return(std::make_pair(false,"wumpMiss"));
-
-}
-
-std::pair<bool, std::string> wumpus_game::game_map::shoot(std::shared_ptr<unit> src,
-                                                          std::vector<std::string> commandArgs) {
-    //check player have bow and arrow
-    return distAtkHelp(src,commandArgs);
-}
-
-std::pair<bool, std::string> wumpus_game::game_map::distAtkHelp(std::shared_ptr<unit> src,
-                                                                std::vector<std::string> commandArgs) {
-    int charTildeIdLoc = unitToLocMap.find(src->getName())->second;
-    int currId;
-    if(commandArgs.size()== 4){
-        for(int i = 1; i < 4;i++) {
-            currId = charTildeIdLoc;
-            std::map<std::string, std::shared_ptr<env_tile>> &currneiMap = tilePointers[currId]->direction();
-            std::map<std::string, std::shared_ptr<env_tile>>::iterator neiIt = currneiMap.find(commandArgs[i]);
-            if (neiIt!= currneiMap.end()){
-                currId = neiIt->second->roomId;
-            }
-            if (tilePointers[currId]->getCharInRoom().find("Wumpus")==tilePointers[currId]->getCharInRoom().end()){
-                return std::make_pair(true,"wumpushit");
-            }
-
-        }
-    }
-    return std::make_pair(false,"wiff");
+std::pair<bool, std::string> wumpus_game::game_map::travel(std::shared_ptr<unit> src,
+                                                           std::vector<std::string> commandArgs) {
+    return std::make_pair(true,"dummy");
 }

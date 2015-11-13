@@ -4,15 +4,15 @@
 
 #ifndef INC_3PROJECTSPEL_TILE_H
 #define INC_3PROJECTSPEL_TILE_H
-#include "../unit/unit.h"
 #include "../stuff/item.h"
 
 #include <memory>
 #include <map>
 #include <vector>
-#include "../unit/player_ctrl.h"
 
 namespace wumpus_game{
+    class unit;
+
     class env_tile {
     protected://Data
         int roomId;

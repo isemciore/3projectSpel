@@ -5,7 +5,7 @@
 #ifndef INC_3PROJECTSPEL_WORLD_H
 #define INC_3PROJECTSPEL_WORLD_H
 
-#include "env_tile.h"
+#include "world/env_tile.h"
 #include "../saveAload.h"
 #include "../unit/player_ctrl.h"
 #include <vector>
@@ -48,8 +48,7 @@ namespace wumpus_game{
         std::pair<bool,std::string> shoot(std::shared_ptr<unit> src, std::vector<std::string> commandArgs);//{ return std::make_pair(true,"something");}
         std::pair<bool,std::string> pick(std::shared_ptr<unit> src, std::vector<std::string> commandArgs);
         std::pair<bool,std::string> drop(std::shared_ptr<unit> src, std::vector<std::string> commandArgs);
-        std::pair<bool,std::string> moveItem(std::shared_ptr<unit> src, std::vector<std::string> commandArgs){return std::make_pair(
-                    false,"something");}
+        std::pair<bool,std::string> moveItem(std::shared_ptr<unit> src, std::vector<std::string> commandArgs);
         /*bool attack(std::shared_ptr<unit> src, std::string commandArgs){ return true;}
         bool cast(std::shared_ptr<unit> src, std::string commandsArgs){ return true;}
         bool shoot(std::shared_ptr<unit> src, std::string commandsArgs){ return true;}

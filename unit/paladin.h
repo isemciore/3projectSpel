@@ -11,6 +11,7 @@ namespace wumpus_game {
 
     class paladin : public player_ctrl {
     public:
+        using player_ctrl::player_ctrl;
         paladin():player_ctrl(){}
     };
 

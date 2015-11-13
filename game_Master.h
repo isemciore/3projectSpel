@@ -9,7 +9,7 @@
 #include "stuff/item.h"
 #include <memory>
 #include "saveAload.h"
-#include "world/game_map.h"
+#include "game_map.h"
 //Have unique id for TILE, UNIT. handle output save and item and create world unit...
 // Handle creating new item / character
 // after every turn, it reads through publishing style.
